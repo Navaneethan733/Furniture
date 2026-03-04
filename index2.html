@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>STACKLY Furniture – Modern Minimalist Home</title>
+  <meta name="description" content="Explore our minimalist collection for the modern home. Sustainable design, premium quality.">
+  <meta name="author" content="STACKLY">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-v2">
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo-wrap">
+      <img src="images/logo/logo.webp" alt="STACKLY" class="preloader-logo">
+      <div class="preloader-glow"></div>
+    </div>
+    <div class="preloader-bar-track">
+      <div class="preloader-bar" id="preloaderBar"></div>
+    </div>
+    <p class="preloader-label">Curating your space&hellip;</p>
+  </div>
+</div>
+
+<button id="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#" class="active">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-btn" aria-label="Account"><i class="fa-solid fa-user"></i></a>
+      <a href="cart.html" class="nav-btn cart" aria-label="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="minimal-hero" style="background: url('images/slider/slider-1.webp') center/cover no-repeat; height: 90vh; position: relative;">
+  <div class="hero-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.35);"></div>
+  <div class="container" style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+    <div class="hero-content reveal">
+      <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 24px; text-shadow: 0 4px 30px rgba(0,0,0,0.5);">The New Minimalist Era</h1>
+      <p style="font-size: 1.15rem; max-width: 600px; margin: 0 auto 40px; opacity: 0.9;">Sustainable, intentional, and beautiful. Discover furniture that brings calm to your living space.</p>
+      
+      <div class="hero-search" style="max-width: 500px; margin: 0 auto; background: white; padding: 6px; border-radius: 50px; display: flex; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+        <input type="text" placeholder="Search for chairs, tables, sofas..." style="flex: 1; border: none; padding: 0 20px; outline: none; font-size: 0.95rem; color: #333; border-radius: 50px;">
+        <button class="btn btn-primary" style="border-radius: 50px; padding: 12px 24px;">Search</button>
+      </div>
+      
+      <div class="hero-tags mt-8" style="font-size: 0.82rem; opacity: 0.8;">
+        Popular: <a href="shop.html" style="text-decoration: underline; margin: 0 6px;">Oak Chairs</a>, <a href="shop.html" style="text-decoration: underline; margin: 0 6px;">Lounge Sofas</a>, <a href="shop.html" style="text-decoration: underline; margin: 0 6px;">Minimalist Lamps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">New Collections</span>
+      <h2 class="section-title">Elevated Living Room</h2>
+      <p class="section-sub">Thoughtfully curated pieces for a home that feels like a sanctuary.</p>
+    </div>
+    
+    <div class="masonry-grid" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; grid-auto-rows: 240px;">
+      <div class="masonry-item reveal" style="grid-column: span 7; grid-row: span 2; position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow);">
+        <img src="images/section/categories-6.webp" alt="Living Room" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+        <div class="masonry-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; color: white;">
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 8px;">The Living Collection</h3>
+          <p style="font-size: 0.9rem; opacity: 0.85; margin-bottom: 20px; max-width: 300px;">Experience the perfect balance of comfort and Nordic design.</p>
+          <a href="shop.html" class="btn btn-outline" style="align-self: flex-start; padding: 10px 24px; font-size: 0.8rem;">Explore More</a>
+        </div>
+      </div>
+      
+      <div class="masonry-item reveal delay-1" style="grid-column: span 5; grid-row: span 1; position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow);">
+        <img src="images/section/categories-1.webp" alt="Decor" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+        <div class="masonry-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;">
+           <span style="font-weight: 700; font-size: 1.2rem; letter-spacing: 0.1em; text-transform: uppercase;">Decor & Art</span>
+        </div>
+      </div>
+      
+      <div class="masonry-item reveal delay-2" style="grid-column: span 5; grid-row: span 1; position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow);">
+        <img src="images/section/categories-2.webp" alt="Lighting" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+        <div class="masonry-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;">
+           <span style="font-weight: 700; font-size: 1.2rem; letter-spacing: 0.1em; text-transform: uppercase;">Atmospheric Lighting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--bg);">
+  <div class="container">
+    <div class="look-banner" style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+      <div class="look-img reveal-left" style="flex: 1; min-width: 340px; position: relative;">
+        <div style="aspect-ratio: 1; border-radius: 30px; overflow: hidden; box-shadow: var(--shadow-lg);">
+          <img src="images/section/collections-banner-2.webp" alt="Modern Sofa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="position: absolute; bottom: -30px; right: -30px; width: 180px; height: 180px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 12px solid var(--bg); color: white; text-align: center; box-shadow: var(--shadow);">
+          <div>
+            <div style="font-weight: 800; font-size: 1.8rem;">30%</div>
+            <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Off Selected<br>Styles</div>
+          </div>
+        </div>
+      </div>
+      <div class="look-content reveal-right" style="flex: 1; min-width: 340px;">
+        <span class="section-tag">Featured Style</span>
+        <h2 class="section-title">The Nordic Sanctuary</h2>
+        <p style="margin-bottom: 24px;">Our designers have combined raw natural wood with soft, sustainable textiles to create a range that feels as good as it looks. Each piece is crafted to withstand the test of time, both in quality and style.</p>
+        
+        <ul style="margin-bottom: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <li style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-check" style="color: var(--primary);"></i> 100% Solid Oak</li>
+          <li style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-check" style="color: var(--primary);"></i> Recycled Fabrics</li>
+          <li style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-check" style="color: var(--primary);"></i> Artisan Crafted</li>
+          <li style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-check" style="color: var(--primary);"></i> 10yr Guarantee</li>
+        </ul>
+        
+        <a href="shop.html" class="btn btn-green">View Sanctuary Collection &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+       <span class="section-tag">Shop The Trend</span>
+       <h2 class="section-title">Best Sellers This Week</h2>
+    </div>
+    <div class="products-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-1.webp" alt="Product">
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="#">Minimalist Lounge Chair</a></div>
+          <div class="product-price"><span class="price-now">₹249.00</span></div>
+          <button class="add-to-cart js-add-cart" data-id="p1" data-name="Minimalist Lounge Chair" data-price="249.00" data-image="images/shop/product-1.webp" style="width: 100%; margin-top: 10px;">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="product-card reveal delay-1">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-4.webp" alt="Product">
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="#">Sculptural Oak Table</a></div>
+          <div class="product-price"><span class="price-now">₹599.00</span></div>
+          <button class="add-to-cart js-add-cart" data-id="p4" data-name="Sculptural Oak Table" data-price="599.00" data-image="images/shop/product-4.webp" style="width: 100%; margin-top: 10px;">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="product-card reveal delay-2">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-5.webp" alt="Product">
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="#">Pendant Light Brass</a></div>
+          <div class="product-price"><span class="price-now">₹129.00</span></div>
+          <button class="add-to-cart js-add-cart" data-id="p5" data-name="Pendant Light Brass" data-price="129.00" data-image="images/shop/product-5.webp" style="width: 100%; margin-top: 10px;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></div>
+        <p>Premium office and home furniture crafted for the modern professional. Built to last, designed to inspire.</p>
+        <div class="footer-socials">
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="./404.html">FAQ</a></li>
+          <li><a href="./404.html">Shipping Info</a></li>
+          <li><a href="./404.html">Returns & Refunds</a></li>
+          <li><a href="./404.html">Track Order</a></li>
+          <li><a href="./404.html">Size Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@stackly.com"><i class="fa-regular fa-envelope"></i> hello@stackly.com</a></li>
+          <li><a href="tel:+91 9876543210"><i class="fa-solid fa-phone"></i> +91 9876543210</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> Salem, Tamil Nadu, India</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Furniture. All rights reserved. Crafted with ❤️ for productive spaces.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

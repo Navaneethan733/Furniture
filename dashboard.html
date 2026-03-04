@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard - STACKLY Furniture</title>
+  <meta name="description" content="Manage your orders and analytics on STACKLY.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-page-v2">
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo-wrap">
+      <img src="images/logo/logo.webp" alt="STACKLY" class="preloader-logo">
+      <div class="preloader-glow"></div>
+    </div>
+    <div class="preloader-bar-track">
+      <div class="preloader-bar" id="preloaderBar"></div>
+    </div>
+    <p class="preloader-label">Loading&hellip;</p>
+  </div>
+</div>
+
+<button id="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div style="color:rgba(255,255,255,.6);font-size:.82rem;">Welcome to STACKLY Furniture</div>
+      <div class="topbar-center">🚚 Free shipping on all orders over <span>₹50.00</span></div>
+      <div class="topbar-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></a>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li class="has-dropdown">
+            <a href="#">Home <i class="fa-solid fa-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="index.html">Home 1</a></li>
+              <li><a href="index2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="nav-btn" aria-label="Account"><i class="fa-solid fa-user"></i></a>
+        <a href="cart.html" class="nav-btn cart" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="dash-container-v2">
+    
+    <aside class="dash-sidebar-v2">
+      <div class="dash-user-v2">
+        <img src="images/auth/images.webp" alt="User">
+        <div class="user-info-v2">
+          <h4>Alex Morgan</h4>
+          <p>Premium Member</p>
+        </div>
+      </div>
+
+      <nav class="dash-menu-v2">
+        <div class="menu-section-v2">
+          <span class="menu-label-v2">Menu</span>
+          <ul class="menu-list-v2">
+            <li class="menu-item-v2 active"><a href="#"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+            <li class="menu-item-v2"><a href="./404.html"><i class="fa-solid fa-envelope"></i> <span>Inbox</span></a></li>
+            <li class="menu-item-v2"><a href="shop.html"><i class="fa-solid fa-shop"></i> <span>Store</span></a></li>
+            <li class="menu-item-v2"><a href="./404.html"><i class="fa-solid fa-clock-rotate-left"></i> <span>Orders</span></a></li>
+          </ul>
+        </div>
+
+        <div class="menu-section-v2">
+          <span class="menu-label-v2">Account</span>
+          <ul class="menu-list-v2">
+            <li class="menu-item-v2"><a href="./404.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+            <li class="menu-item-v2"><a href="index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-action-v2">
+        <div class="action-plus-v2"><i class="fa-solid fa-plus"></i></div>
+        <h4 style="font-size: 0.9rem; margin-bottom: 8px;">Need Help?</h4>
+        <p style="font-size: 0.75rem; color: var(--text-light);">Contact our style concierge for design advice.</p>
+      </div>
+    </aside>
+
+    <main class="dash-main-v2">
+      <header class="dash-search-v2">
+        <div>
+          <h2 style="font-family: 'Playfair Display'; font-size: 1.8rem;">Analytics</h2>
+          <p style="font-size: 0.85rem; color: var(--text-light);">Welcome back, Alex. Here's your interior summary.</p>
+        </div>
+        <div class="search-box-v2">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search orders, invoices...">
+        </div>
+      </header>
+
+      <div class="stats-grid-v2">
+        <div class="dash-card stat-card-v2">
+          <div class="stat-icon-v2" style="background: #eef4f0; color: #2B5329;"><i class="fa-solid fa-truck-fast"></i></div>
+          <div>
+            <p style="font-size: 0.8rem; color: var(--text-light);">Active Orders</p>
+            <h3 style="font-size: 1.4rem;">04</h3>
+            <span style="font-size: 0.65rem; color: var(--primary);">+2 today</span>
+          </div>
+        </div>
+        <div class="dash-card stat-card-v2">
+          <div class="stat-icon-v2" style="background: #fff0f0; color: #d32f2f;"><i class="fa-solid fa-heart"></i></div>
+          <div>
+            <p style="font-size: 0.8rem; color: var(--text-light);">Wishlist</p>
+            <h3 style="font-size: 1.4rem;">12</h3>
+            <span style="font-size: 0.65rem; color: #d32f2f;">3 on sale</span>
+          </div>
+        </div>
+        <div class="dash-card stat-card-v2">
+          <div class="stat-icon-v2" style="background: #eef2ff; color: #3f51b5;"><i class="fa-solid fa-gift"></i></div>
+          <div>
+            <p style="font-size: 0.8rem; color: var(--text-light);">Rewards</p>
+            <h3 style="font-size: 1.4rem;">850</h3>
+            <span style="font-size: 0.65rem; color: #3f51b5;">Expiring soon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-row-v3">
+        <div class="dash-card">
+          <h3 style="font-family: 'Playfair Display'; margin-bottom: 20px; font-size: 1.1rem;">Activity Timeline</h3>
+          <div class="timeline-v2">
+            <div class="timeline-item-v2 green">
+              <p style="font-size: 0.85rem; font-weight: 600;">Order #STK-25-0067 Delivered</p>
+              <p style="font-size: 0.75rem; color: var(--text-light);">Your Oak Desk Chair has arrived.</p>
+              <span style="font-size: 0.65rem; color: #a0b0a5;">2 hours ago</span>
+            </div>
+            <div class="timeline-item-v2">
+              <p style="font-size: 0.85rem; font-weight: 600;">Price Drop Alert</p>
+              <p style="font-size: 0.75rem; color: var(--text-light);">Velvet Sofa is now 15% off.</p>
+              <span style="font-size: 0.65rem; color: #a0b0a5;">Yesterday</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card chart-panel-v2" style="margin-bottom: 0;">
+          <div class="chart-header-v2">
+            <h3 style="font-family: 'Playfair Display'; font-size: 1.1rem;">Spend Analytics</h3>
+            <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">+ ₹240 / mo</div>
+          </div>
+          <div class="chart-wave-v2" style="height: 120px;">
+            <svg viewBox="0 0 500 150" style="width: 100%; height: 100%;">
+              <path d="M0,80 Q50,20 100,100 T200,60 T300,120 T400,40 T500,90" fill="none" stroke="#2B5329" stroke-width="4" stroke-linecap="round"/>
+              <path d="M0,80 Q50,20 100,100 T200,60 T300,120 T400,40 T500,90 L500,150 L0,150 Z" fill="rgba(43,83,41,0.05)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-card" style="padding: 24px; margin-bottom: 30px;">
+        <h3 style="font-family: 'Playfair Display'; margin-bottom: 20px;">Recent Purchases</h3>
+        <div class="dash-table-wrap">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 600px;">
+            <thead>
+              <tr style="font-size: 0.8rem; color: #a0b0a5; letter-spacing: 0.5px;">
+                <th style="padding-bottom: 15px;">PRODUCT</th>
+                <th style="padding-bottom: 15px;">ORDER ID</th>
+                <th style="padding-bottom: 15px;">PRICE</th>
+                <th style="padding-bottom: 15px;">STATUS</th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 0.88rem;">
+              <tr style="border-top: 1px solid #f0f0f0;">
+                <td style="padding: 15px 0;">Oak Desk Chair</td>
+                <td>#SK-4829</td>
+                <td>₹450.00</td>
+                <td><span style="padding: 4px 12px; background: #eef4f0; color: #2B5329; border-radius: 20px; font-size: 0.75rem;">Delivered</span></td>
+              </tr>
+              <tr style="border-top: 1px solid #f0f0f0;">
+                <td style="padding: 15px 0;">Velvet Sofa</td>
+                <td>#SK-9811</td>
+                <td>₹1,200.00</td>
+                <td><span style="padding: 4px 12px; background: #fff8e1; color: #C8973A; border-radius: 20px; font-size: 0.75rem;">Shipped</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <h3 style="font-family: 'Playfair Display'; margin-bottom: 20px;">Curated For You</h3>
+        <div class="curated-grid-v2">
+          <div class="curated-card-v2">
+            <img src="images/section/categories-1.webp" alt="Lamp">
+            <h5 style="font-size: 0.9rem; margin-bottom: 5px;">Minimalist Lamp</h5>
+            <p style="font-size: 0.8rem; color: var(--primary); font-weight: 700;">₹89.00</p>
+          </div>
+          <div class="curated-card-v2">
+            <img src="images/section/categories-2.webp" alt="Storage">
+            <h5 style="font-size: 0.9rem; margin-bottom: 5px;">Modular Shelf</h5>
+            <p style="font-size: 0.8rem; color: var(--primary); font-weight: 700;">₹210.00</p>
+          </div>
+          <div class="curated-card-v2">
+            <img src="images/section/categories-3.webp" alt="Chair">
+            <h5 style="font-size: 0.9rem; margin-bottom: 5px;">Nordic Stool</h5>
+            <p style="font-size: 0.8rem; color: var(--primary); font-weight: 700;">₹145.00</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="dash-side-v2">
+      <div class="top-bar-v2">
+        <button class="icon-btn-v2"><i class="fa-regular fa-comment"></i></button>
+        <button class="icon-btn-v2" style="position: relative;"><i class="fa-regular fa-bell"></i><span style="width: 8px; height: 8px; background: #d32f2f; border-radius: 50%; position: absolute; top: 12px; right: 12px;"></span></button>
+        <button class="icon-btn-v2"><i class="fa-regular fa-user"></i></button>
+      </div>
+
+      <div class="dash-card profile-summary-v2">
+        <div class="circle-avatar-v2">
+          <img src="images/auth/images.webp" alt="Alex">
+        </div>
+        <h3 style="font-family: 'Playfair Display'; margin-bottom: 5px;">Alex Morgan</h3>
+        <p style="font-size: 0.8rem; color: var(--text-light); margin-bottom: 25px;">Design Enthusiast</p>
+        
+        <div style="display: flex; justify-content: space-around; border-top: 1px solid #f0f0f0; padding-top: 20px;">
+          <div><h4 style="font-size: 1.1rem;">12</h4><p style="font-size: 0.65rem; color: var(--text-light);">Purchases</p></div>
+          <div><h4 style="font-size: 1.1rem;">₹4.2k</h4><p style="font-size: 0.65rem; color: var(--text-light);">Savings</p></div>
+          <div><h4 style="font-size: 1.1rem;">02</h4><p style="font-size: 0.65rem; color: var(--text-light);">Rewards</p></div>
+        </div>
+      </div>
+
+      <div class="dash-card status-gauge-v2" style="margin-bottom: 0;">
+        <h4 style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-mid);">Account Progress</h4>
+        <div class="gauge-svg-v2">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#f0f0f0" stroke-width="8" />
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#2B5329" stroke-width="8" stroke-dasharray="251 251" stroke-dashoffset="63" stroke-linecap="round" />
+            <text x="50" y="55" text-anchor="middle" font-size="14" font-weight="700" fill="#2B5329">75%</text>
+          </svg>
+        </div>
+        <div class="achievement-badges-v2">
+          <div class="badge-v2 earned" title="Early Adopter"><i class="fa-solid fa-seedling"></i></div>
+          <div class="badge-v2 earned" title="Design Lover"><i class="fa-solid fa-couch"></i></div>
+          <div class="badge-v2" title="Master Decorator"><i class="fa-solid fa-crown"></i></div>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <h4 style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-mid);">Style Lounge</h4>
+        <div class="message-item-v2">
+          <div class="msg-avatar-v2">S</div>
+          <div>
+            <p style="font-size: 0.8rem; font-weight: 700;">Sarah (Concierge)</p>
+            <p style="font-size: 0.75rem; color: var(--text-light);">I found a rug that matches your sofa!</p>
+          </div>
+        </div>
+        <button class="btn-v2-primary" style="margin-top: 10px; width: 100%;">View Chat</button>
+      </div>
+    </aside>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

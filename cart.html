@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Your Cart - STACKLY Furniture</title>
+  <meta name="description" content="Review your cart at STACKLY Furniture.">
+  <meta name="author" content="STACKLY">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cart-page-content { padding: 60px 0; min-height: 50vh; }
+    .cart-layout { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; }
+    .cart-items { flex: 1; min-width: 300px; }
+    .cart-summary { width: 340px; background: var(--white); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-sm); flex-shrink: 0; }
+    
+    .cart-item { display: flex; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--border); align-items: center; }
+    .cart-item:first-child { padding-top: 0; }
+    .cart-item-img { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; background: var(--bg); }
+    .cart-item-details { flex: 1; }
+    .cart-item-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 8px; color: var(--text-dark); }
+    .cart-item-price { color: var(--primary); font-weight: 700; }
+    
+    .cart-qty-control { display: inline-flex; align-items: center; border: 1.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 12px; }
+    .cart-qty-btn { width: 30px; height: 30px; background: var(--bg); border: none; font-size: 0.8rem; cursor: pointer; transition: 0.2s; }
+    .cart-qty-btn:hover { background: var(--primary); color: white; }
+    .cart-qty-input { width: 40px; text-align: center; font-size: 0.9rem; font-weight: 600; border: none; pointer-events: none; }
+    
+    .cart-item-remove { background: none; border: none; color: #d9534f; cursor: pointer; font-size: 1.2rem; transition: 0.2s; padding: 10px; }
+    .cart-item-remove:hover { color: #c9302c; transform: scale(1.1); }
+    
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 16px; font-size: 0.95rem; color: var(--text-mid); }
+    .summary-total { font-size: 1.25rem; font-weight: 700; color: var(--text-dark); border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; display: flex; justify-content: space-between; }
+    
+    .empty-cart { text-align: center; padding: 40px; color: var(--text-mid); }
+    .empty-cart i { font-size: 3rem; color: var(--border); margin-bottom: 16px; display: block; }
+    
+    @media (max-width: 768px) {
+      .cart-summary { width: 100%; }
+      .cart-item { flex-direction: column; align-items: flex-start; gap: 16px; position: relative; }
+      .cart-item-remove { position: absolute; top: 16px; right: 0; }
+    }
+  </style>
+</head>
+<body class="cart-page">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="color:rgba(255,255,255,.6);font-size:.82rem;">Secure Checkout</div>
+    <div class="topbar-center">🚚 Free shipping on all orders over <span>₹50.00</span></div>
+    <div class="topbar-links">
+      <a href="shop.html">Continue Shopping</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-btn" aria-label="Account"><i class="fa-solid fa-user"></i></a>
+      <a href="cart.html" class="nav-btn cart" aria-label="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="page-header" style="background: var(--bg); padding: 40px 0; text-align: center;">
+  <div class="container">
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.4rem;">Your Cart</h1>
+  </div>
+</div>
+
+<section class="cart-page-content">
+  <div class="container">
+    <div class="cart-layout">
+      
+      <div class="cart-items" id="cartItemsContainer">
+        <div class="empty-cart">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <p>Your cart is currently empty.</p>
+          <a href="shop.html" class="btn btn-primary" style="margin-top: 20px;">Return to Shop</a>
+        </div>
+      </div>
+
+      <aside class="cart-summary" id="cartSummaryBlock" style="display: none;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; border-bottom: 2px solid var(--border); padding-bottom: 12px; margin-bottom: 24px;">Order Summary</h3>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₹0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span>Calculated at checkout</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax</span>
+          <span id="cartTax">₹0.00</span>
+        </div>
+        <div class="summary-total">
+          <span>Total</span>
+          <span id="cartTotal" style="color: var(--primary);">₹0.00</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 24px; padding: 16px;">Proceed to Checkout &nbsp;<i class="fa-solid fa-lock"></i></button>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></div>
+        <p>Premium office and home furniture crafted for the modern professional. Built to last, designed to inspire.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Size Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@stackly.com"><i class="fa-regular fa-envelope"></i> hello@stackly.com</a></li>
+          <li><a href="tel:+91 9876543210"><i class="fa-solid fa-phone"></i> +91 9876543210</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> Salem, Tamil Nadu, India</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Furniture. All rights reserved. Crafted with ❤️ for productive spaces.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Contact Us - STACKLY Furniture | Get in Touch</title>
+  <meta name="description" content="Have questions about our furniture or your order? Contact the STACKLY team today. We're here to help you create your perfect space.">
+  <meta name="author" content="STACKLY">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-hero {
+      height: 60vh;
+      background: linear-gradient(rgba(26,58,24,0.7), rgba(26,58,24,0.7)), url('images/banner/collections-1.webp') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+    }
+    .contact-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .contact-hero p {
+      color: var(--white);
+      opacity: 0.9;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      margin-top: 60px;
+    }
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .info-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .info-icon {
+      width: 54px;
+      height: 54px;
+      background: var(--white);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .info-text h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+    }
+    .info-text p {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+    }
+
+    .contact-form-wrap {
+      background: var(--white);
+      padding: 50px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+    .form-control {
+      width: 100%;
+      padding: 14px 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+      transition: var(--transition);
+      background: var(--bg-light);
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(43,83,41,0.05);
+    }
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .faq-section {
+      background: var(--white);
+      padding: 100px 0;
+    }
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      transition: var(--transition);
+    }
+    .faq-question:hover {
+      color: var(--accent);
+    }
+    .faq-answer {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s ease;
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      padding-top: 0;
+    }
+    .faq-item.active .faq-answer {
+      height: auto;
+      padding-top: 16px;
+    }
+    .faq-icon {
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 1024px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+    }
+    @media (max-width: 640px) {
+      .contact-form-wrap { padding: 30px; }
+    }
+  </style>
+</head>
+<body class="contact-page">
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo-wrap">
+      <img src="images/logo/logo.webp" alt="STACKLY" class="preloader-logo">
+      <div class="preloader-glow"></div>
+    </div>
+    <div class="preloader-bar-track">
+      <div class="preloader-bar" id="preloaderBar"></div>
+    </div>
+    <p class="preloader-label">Opening channels&hellip;</p>
+  </div>
+</div>
+
+<button id="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-btn" aria-label="Account"><i class="fa-solid fa-user"></i></a>
+      <a href="cart.html" class="nav-btn cart" aria-label="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="contact-hero">
+  <div class="container reveal" style="z-index: 10;">
+    <h1>Get in Touch</h1>
+    <p>Whether you have a question about our products, an order, or just want to talk design—we're here for you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info-list reveal-left">
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="info-text">
+            <h3>Phone Support</h3>
+            <p>Mon-Fri, 9am - 6pm</p>
+            <p style="font-weight: 700; color: var(--primary);">+91 9876543210</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="info-text">
+            <h3>Email Us</h3>
+            <p>Our team usually responds within 24hrs.</p>
+            <p style="font-weight: 700; color: var(--primary);">hello@stackly.com</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="info-text">
+            <h3>Visit Showroom</h3>
+            <p>Salem, Tamil Nadu, India</p>
+            <p>10:00 AM - 8:00 PM Daily</p>
+          </div>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 30px; background: var(--bg); border-radius: var(--radius);">
+            <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 12px;">Trade Inquiries</h4>
+            <p style="font-size: 0.9rem;">Are you an architect or interior designer? We offer exclusive trade pricing and dedicated account management for your projects.</p>
+            <a href="mailto:trade@stackly.com" style="display: inline-block; margin-top: 16px; font-weight: 700; color: var(--accent); border-bottom: 2px solid;">Contact Trade Team</a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal-right">
+        <form id="contactForm" onsubmit="return false;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" class="form-control">
+                  <option>General Inquiry</option>
+                  <option>Order Status</option>
+                  <option>Product Question</option>
+                  <option>Returns & Exchanges</option>
+                  <option>Trade Program</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" class="form-control" placeholder="How can we help?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1rem; letter-spacing: 1px;">Send Message <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-header reveal">
+        <span class="section-tag">Quick Help</span>
+        <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="faq-container">
+        <div class="faq-item reveal delay-1">
+            <div class="faq-question">
+                <span>How long does shipping take?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Standard delivery takes 3-7 business days within India. For custom or large items, it may take 10-14 days. You'll receive a tracking link as soon as your order leaves our workshop.</p>
+            </div>
+        </div>
+        <div class="faq-item reveal delay-2">
+            <div class="faq-question">
+                <span>Do you offer international shipping?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Currently, we ship primarily within India. However, for large bulk or trade orders, we can arrange international freight. Please contact our trade team for more details.</p>
+            </div>
+        </div>
+        <div class="faq-item reveal delay-3">
+            <div class="faq-question">
+                <span>What is your return policy?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We want you to love your STACKLY pieces. We offer a 14-day hassle-free return policy for standard items in original condition. Custom-made furniture is generally final sale but covered by our 10-year warranty.</p>
+            </div>
+        </div>
+        <div class="faq-item reveal delay-4">
+            <div class="faq-question">
+                <span>Are your materials sustainably sourced?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes. 100% of our solid timber is FSC-certified. We also use water-based, non-toxic finishes and recycled packaging materials wherever possible to minimize our footprint.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></div>
+        <p>Premium office and home furniture crafted for the modern professional. Built to last, designed to inspire.</p>
+        <div class="footer-socials">
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="./404.html">FAQ</a></li>
+          <li><a href="./404.html">Shipping Info</a></li>
+          <li><a href="./404.html">Returns & Refunds</a></li>
+          <li><a href="./404.html">Track Order</a></li>
+          <li><a href="./404.html">Size Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@stackly.com"><i class="fa-regular fa-envelope"></i> hello@stackly.com</a></li>
+          <li><a href="tel:+91 9876543210"><i class="fa-solid fa-phone"></i> +91 9876543210</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> Salem, Tamil Nadu, India</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Furniture. All rights reserved. Crafted with ❤️ for productive spaces.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const wasActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>STACKLY Furniture – Premium Office & Home Furniture</title>
+  <meta name="description" content="Discover premium ergonomic furniture, office chairs, desks, and accessories at STACKLY Furniture.">
+  <meta name="author" content="STACKLY">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo-wrap">
+      <img src="images/logo/logo.webp" alt="STACKLY" class="preloader-logo">
+      <div class="preloader-glow"></div>
+    </div>
+    <div class="preloader-bar-track">
+      <div class="preloader-bar" id="preloaderBar"></div>
+    </div>
+    <p class="preloader-label">Loading....&hellip;</p>
+  </div>
+</div>
+
+<button id="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="color:rgba(255,255,255,.6);font-size:.82rem;">Welcome to STACKLY Furniture</div>
+    <div class="topbar-center">🚚 Free shipping on all orders over <span>₹50.00</span></div>
+    <div class="topbar-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#" class="active">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-btn" aria-label="Account"><i class="fa-solid fa-user"></i></a>
+      <a href="cart.html" class="nav-btn cart" aria-label="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero-slider" aria-label="Hero Slideshow">
+  <button class="slider-arrow slider-prev" id="sliderPrev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="slider-arrow slider-next" id="sliderNext" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+
+  <div class="slide active" id="slide-0">
+    <img src="images/slider/slider-1.webp" alt="Ergonomic Chair Pro" class="slide-img">
+    <div class="slide-content">
+      <div class="slide-text">
+        <span class="slide-tag">New Arrival</span>
+        <h1 class="slide-title">Ergonomic Chair Pro</h1>
+        <p class="slide-desc">Superior support and better posture for long work hours. Designed for champions of productivity.</p>
+        <a href="shop.html" class="btn btn-primary">Explore Collection &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" id="slide-1">
+    <img src="images/slider/slider-2.webp" alt="Wireless Charging Dock" class="slide-img">
+    <div class="slide-content">
+      <div class="slide-text">
+        <span class="slide-tag">Best Seller</span>
+        <h1 class="slide-title">Wireless Charging Dock</h1>
+        <p class="slide-desc">Stay powered up and organized with our sleek wireless charging solutions for the modern desk.</p>
+        <a href="shop.html" class="btn btn-outline">Shop Now &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" id="slide-2">
+    <img src="images/slider/slider-3.webp" alt="Standing Desk" class="slide-img">
+    <div class="slide-content">
+      <div class="slide-text">
+        <span class="slide-tag">Top Rated</span>
+        <h1 class="slide-title">Double Standing Desk</h1>
+        <p class="slide-desc">Elevate your workspace with height-adjustable desks built for wellness and maximum comfort.</p>
+        <a href="shop.html" class="btn btn-primary">View Collection &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-controls">
+    <button class="slider-dot active" data-slide="0"></button>
+    <button class="slider-dot" data-slide="1"></button>
+    <button class="slider-dot" data-slide="2"></button>
+  </div>
+</section>
+
+<section class="section categories">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Browse by Category</span>
+      <h2 class="section-title">Shop by Collection</h2>
+      <p class="section-sub">From ergonomic essentials to statement pieces — find everything you need for the perfect workspace.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="shop.html" class="cat-card reveal delay-1">
+        <img src="images/section/categories-1.webp" alt="Storage Solutions">
+        <div class="cat-overlay">
+          <div><div class="cat-name">Storage Solutions</div><div class="cat-count">11 items</div></div>
+        </div>
+      </a>
+      <a href="shop.html" class="cat-card reveal delay-2">
+        <img src="images/section/categories-2.webp" alt="Lighting">
+        <div class="cat-overlay">
+          <div><div class="cat-name">Lighting</div><div class="cat-count">9 items</div></div>
+        </div>
+      </a>
+      <a href="shop.html" class="cat-card reveal delay-3">
+        <img src="images/section/categories-3.webp" alt="Office Chairs">
+        <div class="cat-overlay">
+          <div><div class="cat-name">Office Chairs</div><div class="cat-count">20 items</div></div>
+        </div>
+      </a>
+      <a href="shop.html" class="cat-card reveal delay-4">
+        <img src="images/section/categories-4.webp" alt="Accessories">
+        <div class="cat-overlay">
+          <div><div class="cat-name">Accessories</div><div class="cat-count">4 items</div></div>
+        </div>
+      </a>
+      <a href="shop.html" class="cat-card">
+        <img src="images/section/categories-5.webp" alt="Decor">
+        <div class="cat-overlay">
+          <div><div class="cat-name">Decor</div><div class="cat-count">15 items</div></div>
+        </div>
+      </a>
+      <a href="shop.html" class="cat-card">
+        <img src="images/section/categories-6.webp" alt="Ergonomic Furniture">
+        <div class="cat-overlay">
+          <div><div class="cat-name">Ergonomic</div><div class="cat-count">7 items</div></div>
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-8"><a href="shop.html" class="btn btn-green">View All Categories &nbsp;<i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Our Picks For You</span>
+      <h2 class="section-title">Featured Products</h2>
+      <p class="section-sub">Fresh styles just in! Elevate your look and your workspace.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card reveal delay-1">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-1.webp" alt="Ergonomic Chair Pro">
+          <img src="images/shop/product-1.1.webp" alt="Ergonomic Chair Pro Alt" class="img-hover">
+          <span class="product-badge badge-new">New</span>
+          <div class="product-actions">
+            <a href="#" class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="product-detail.html">Ergonomic Chair Pro</a></div>
+          <div class="product-price"><span class="price-now">₹79.99</span></div>
+          <div class="qty-row">
+            <div class="qty-control">
+              <button class="qty-btn qty-dec" aria-label="Decrease"><i class="fa-solid fa-minus"></i></button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-inc" aria-label="Increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p1" data-name="Ergonomic Chair Pro" data-price="79.99" data-image="images/shop/product-1.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal delay-2">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-2.webp" alt="Adjustable Laptop Stand">
+          <img src="images/shop/product-2.1.webp" alt="Adjustable Laptop Stand Alt" class="img-hover">
+          <span class="product-badge badge-sale">-25%</span>
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="product-detail.html">Adjustable Laptop Stand</a></div>
+          <div class="product-price"><span class="price-now">₹59.99</span><span class="price-old">₹79.99</span></div>
+          <div class="qty-row">
+            <div class="qty-control">
+              <button class="qty-btn qty-dec" aria-label="Decrease"><i class="fa-solid fa-minus"></i></button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-inc" aria-label="Increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p2" data-name="Adjustable Laptop Stand" data-price="59.99" data-image="images/shop/product-2.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-3.webp" alt="Laptop Stand">
+          <img src="images/shop/product-3.1.webp" alt="Laptop Stand Alt" class="img-hover">
+          <span class="product-badge badge-sale">-25%</span>
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="product-detail.html">Premium Laptop Stand</a></div>
+          <div class="product-price"><span class="price-now">₹69.99</span><span class="price-old">₹89.99</span></div>
+          <div class="qty-row">
+            <div class="qty-control">
+              <button class="qty-btn qty-dec" aria-label="Decrease"><i class="fa-solid fa-minus"></i></button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-inc" aria-label="Increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p3" data-name="Premium Laptop Stand" data-price="69.99" data-image="images/shop/product-3.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-4.webp" alt="Double Standing Desk">
+          <img src="images/shop/product-4.1.webp" alt="Double Standing Desk Alt" class="img-hover">
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="product-detail.html">Double Standing Desk</a></div>
+          <div class="product-price"><span class="price-now">₹349.99</span></div>
+          <div class="qty-row">
+            <div class="qty-control">
+              <button class="qty-btn qty-dec" aria-label="Decrease"><i class="fa-solid fa-minus"></i></button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-inc" aria-label="Increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p4" data-name="Double Standing Desk" data-price="349.99" data-image="images/shop/product-4.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-5.webp" alt="Wireless Charging Dock">
+          <img src="images/shop/product-5.1.webp" alt="Wireless Charging Dock Alt" class="img-hover">
+          <span class="product-badge badge-new">New</span>
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="product-detail.html">Wireless Charging Dock</a></div>
+          <div class="product-price"><span class="price-now">₹89.99</span><span class="price-old">₹109.99</span></div>
+          <div class="qty-row">
+            <div class="qty-control">
+              <button class="qty-btn qty-dec" aria-label="Decrease"><i class="fa-solid fa-minus"></i></button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-inc" aria-label="Increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p5" data-name="Wireless Charging Dock" data-price="89.99" data-image="images/shop/product-5.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-6.webp" alt="Office Desk Organizer">
+          <img src="images/shop/product-6.1.webp" alt="Office Desk Organizer Alt" class="img-hover">
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="product-detail.html">Desk Organizer Set</a></div>
+          <div class="product-price"><span class="price-now">₹44.99</span></div>
+          <div class="qty-row">
+            <div class="qty-control">
+              <button class="qty-btn qty-dec" aria-label="Decrease"><i class="fa-solid fa-minus"></i></button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-inc" aria-label="Increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p6" data-name="Desk Organizer Set" data-price="44.99" data-image="images/shop/product-6.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-7.webp" alt="Ergonomic Footrest">
+          <img src="images/shop/product-7.1.webp" alt="Ergonomic Footrest Alt" class="img-hover">
+          <span class="product-badge badge-sale">-15%</span>
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="product-detail.html">Ergonomic Footrest</a></div>
+          <div class="product-price"><span class="price-now">₹39.99</span><span class="price-old">₹46.99</span></div>
+          <div class="qty-row">
+            <div class="qty-control">
+              <button class="qty-btn qty-dec" aria-label="Decrease"><i class="fa-solid fa-minus"></i></button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-inc" aria-label="Increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p7" data-name="Ergonomic Footrest" data-price="39.99" data-image="images/shop/product-7.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/shop/product-8.webp" alt="Monitor Arm Stand">
+          <img src="images/shop/product-8.1.webp" alt="Monitor Arm Stand Alt" class="img-hover">
+          <span class="product-badge badge-new">New</span>
+          <div class="product-actions">
+            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-name"><a href="product-detail.html">Monitor Arm Stand</a></div>
+          <div class="product-price"><span class="price-now">₹129.99</span></div>
+          <div class="qty-row">
+            <div class="qty-control">
+              <button class="qty-btn qty-dec" aria-label="Decrease"><i class="fa-solid fa-minus"></i></button>
+              <span class="qty-num">1</span>
+              <button class="qty-btn qty-inc" aria-label="Increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p8" data-name="Monitor Arm Stand" data-price="129.99" data-image="images/shop/product-8.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center mt-8"><a href="shop.html" class="btn btn-green">Load More Products &nbsp;<i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="feature-banner">
+      <img src="images/banner/banner-1.webp" alt="Elevate Your Office">
+      <div class="feature-banner-content">
+        <small>Limited Time Sale</small>
+        <h2>Elevate Your Office Space</h2>
+        <p>Discover our curated collection of premium office furniture designed to inspire productivity and style.</p>
+        <a href="shop.html" class="btn btn-primary">Shop the Sale &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col-banners">
+      <div class="mini-banner">
+        <img src="images/section/collections-banner.webp" alt="Storage">
+        <div class="mini-banner-content">
+          <h3>Smart Storage Solutions</h3>
+          <a href="shop.html">Shop Collection →</a>
+        </div>
+      </div>
+      <div class="mini-banner">
+        <img src="images/section/collections-banner-2.webp" alt="Chairs">
+        <div class="mini-banner-content">
+          <h3>Premium Office Chairs</h3>
+          <a href="shop.html">Shop Collection →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div><div class="stat-num">12K+</div><div class="stat-label">Happy Customers</div></div>
+      <div><div class="stat-num">500+</div><div class="stat-label">Premium Products</div></div>
+      <div><div class="stat-num">98%</div><div class="stat-label">Satisfaction Rate</div></div>
+      <div><div class="stat-num">15+</div><div class="stat-label">Years of Excellence</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Inspiration</span>
+      <h2 class="section-title">Workspace Lookbook</h2>
+      <p class="section-sub">Real setups from our customers. Tag us @stacklyfurniture to be featured.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item big"><img src="images/gallery/gallery-1.webp" alt="Workspace 1"></div>
+      <div class="gallery-item"><img src="images/gallery/gallery-2.webp" alt="Workspace 2"></div>
+      <div class="gallery-item"><img src="images/gallery/gallery-3.webp" alt="Workspace 3"></div>
+      <div class="gallery-item"><img src="images/gallery/gallery-4.webp" alt="Workspace 4"></div>
+      <div class="gallery-item"><img src="images/gallery/gallery-5.webp" alt="Workspace 5"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Customer Reviews</span>
+      <h2 class="section-title">What Our Customers Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Absolutely love my new ergonomic chair. My back pain has reduced significantly since I started using it. The build quality is outstanding!"</p>
+        <div class="testi-author">
+          <img src="images/shop/testimonials-item-1.webp" alt="Sarah M." class="testi-avatar">
+          <div><div class="testi-name">Sarah M.</div><div class="testi-role">Interior Designer</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The standing desk completely transformed my home office. Fast delivery, easy setup, and the quality far exceeds the price point."</p>
+        <div class="testi-author">
+          <img src="images/shop/testimonials-item-2.webp" alt="James R." class="testi-avatar">
+          <div><div class="testi-name">James R.</div><div class="testi-role">Software Developer</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"STACKLY Furniture has the best collection I've seen. Great customer support too — they helped me pick the perfect setup for my office!"</p>
+        <div class="testi-author">
+          <img src="images/shop/testimonials-item-3.webp" alt="Emily K." class="testi-avatar">
+          <div><div class="testi-name">Emily K.</div><div class="testi-role">Marketing Manager</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <h2>Get 10% Off Your First Order</h2>
+      <p>Subscribe to our newsletter for exclusive deals, new arrivals, and workspace inspiration.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email address" aria-label="Email">
+        <button type="submit">Subscribe <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></div>
+        <p>Premium office and home furniture crafted for the modern professional. Built to last, designed to inspire.</p>
+        <div class="footer-socials">
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="./404.html">FAQ</a></li>
+          <li><a href="./404.html">Shipping Info</a></li>
+          <li><a href="./404.html">Returns & Refunds</a></li>
+          <li><a href="./404.html">Track Order</a></li>
+          <li><a href="./404.html">Size Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@stackly.com"><i class="fa-regular fa-envelope"></i> hello@stackly.com</a></li>
+          <li><a href="tel:+11234567890"><i class="fa-solid fa-phone"></i> +91 9876543210</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> Salem, Tamil Nadu, India</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Furniture. All rights reserved. Crafted with ❤️ for productive spaces.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

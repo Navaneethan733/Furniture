@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Login - STACKLY Furniture</title>
+  <meta name="description" content="Sign in to your STACKLY Furniture account.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+  <a href="javascript:history.back()" class="back-btn">
+    <i class="fa-solid fa-arrow-left"></i> Back
+  </a>
+
+  <div class="auth-card-v2">
+    <div class="auth-form-panel">
+      <h2>Login</h2>
+      
+      <form onsubmit="window.location.href='dashboard.html'; return false;">
+        <div class="input-container">
+          <i class="fa-regular fa-user"></i>
+          <input type="text" class="input-v2" placeholder="Username" required>
+        </div>
+        <div class="input-container">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" class="input-v2" placeholder="Password" required>
+        </div>
+        
+        <button type="submit" class="btn-v2-primary" style="width: 150px; margin: 10px 0 0;">LOGIN</button>
+      </form>
+      
+      <div class="social-platforms">
+        <p>Or Sign in with social platforms</p>
+        <div class="social-icons">
+          <a href="#" class="social-circle"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-circle"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social-circle"><i class="fa-brands fa-google"></i></a>
+          <a href="#" class="social-circle"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-decor-panel">
+      <div class="auth-decor-content">
+        <img src="images/auth/login-illustration.webp" alt="Welcome Illustration" class="auth-illustration">
+        <h3>New here ?</h3>
+        <p>Explore our premium collection and start designing your dream space today.</p>
+        <a href="signup.html" class="btn-v2-outline">SIGN UP</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

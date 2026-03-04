@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Blog - STACKLY Furniture | Design, Interior & Lifestyle</title>
+  <meta name="description" content="Read the latest from STACKLY Furniture on interior design, office ergonomics, and sustainable living.">
+  <meta name="author" content="STACKLY">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .blog-hero {
+      height: 60vh;
+      background: linear-gradient(rgba(26,58,24,0.6), rgba(26,58,24,0.6)), url('images/banner/banner-1.webp') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      margin-bottom: 80px;
+    }
+    .blog-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 16px;
+    }
+    .blog-hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    .featured-post {
+      margin-bottom: 80px;
+    }
+    .featured-card {
+      display: flex;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition-slow);
+      text-decoration: none;
+    }
+    .featured-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    .featured-img {
+      flex: 1.2;
+      height: 500px;
+      overflow: hidden;
+    }
+    .featured-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s ease;
+    }
+    .featured-card:hover .featured-img img {
+      transform: scale(1.05);
+    }
+    .featured-content {
+      flex: 1;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .post-category {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .featured-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+    .post-meta {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    .blog-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+    .blog-card-img {
+      height: 250px;
+      overflow: hidden;
+    }
+    .blog-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .blog-card:hover .blog-card-img img {
+      transform: scale(1.1);
+    }
+    .blog-card-content {
+      padding: 30px;
+      flex-grow: 1;
+    }
+    .blog-card-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      color: var(--text-dark);
+    }
+    .read-more {
+      font-weight: 700;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s;
+    }
+    .blog-card:hover .read-more {
+      gap: 12px;
+    }
+
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-card { flex-direction: column; }
+      .featured-img { height: 350px; }
+      .featured-content { padding: 40px; }
+    }
+    @media (max-width: 640px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .featured-content h2 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body class="blog-page">
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo-wrap">
+      <img src="images/logo/logo.webp" alt="STACKLY" class="preloader-logo">
+      <div class="preloader-glow"></div>
+    </div>
+    <div class="preloader-bar-track">
+      <div class="preloader-bar" id="preloaderBar"></div>
+    </div>
+    <p class="preloader-label">Curating stories&hellip;</p>
+  </div>
+</div>
+
+<button id="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="color:rgba(255,255,255,.6);font-size:.82rem;">Welcome to STACKLY Journal</div>
+    <div class="topbar-center">✨ Discover the art of modern living</div>
+    <div class="topbar-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Newsletter</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-btn" aria-label="Account"><i class="fa-solid fa-user"></i></a>
+      <a href="cart.html" class="nav-btn cart" aria-label="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="blog-hero">
+  <div class="container reveal">
+    <h1>The STACKLY Journal</h1>
+    <p>Exploring the intersection of mindful design, sustainable living, and the future of the workspace.</p>
+  </div>
+</section>
+
+<section class="featured-post">
+  <div class="container">
+    <a href="./404.html" class="featured-card reveal">
+      <div class="featured-img">
+        <img src="images/gallery/gallery-4.webp" alt="Sustainability in Design">
+      </div>
+      <div class="featured-content">
+        <span class="post-category">Sustainability</span>
+        <h2>The Future of Furniture: Why Circular Design Matters</h2>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> March 12, 2026</span>
+          <span><i class="fa-regular fa-user"></i> By Alex Thorne</span>
+        </div>
+        <p style="margin-bottom: 30px; color: var(--text-mid);">Discover how we're redefining the lifecycle of home and office furniture, from responsibly sourced oak to fully recyclable components. Sustainable design isn't just a trend; it's our promise to the future.</p>
+        <div class="read-more">Read Full Story <i class="fa-solid fa-arrow-right-long"></i></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-header reveal" style="text-align: left; margin-bottom: 50px;">
+      <h2 class="section-title">Latest Articles</h2>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card reveal delay-1">
+        <a href="./404.html" class="blog-card-img">
+          <img src="images/gallery/gallery-1.webp" alt="Office Ergonomics">
+        </a>
+        <div class="blog-card-content">
+          <span class="post-category" style="background:var(--primary);">Ergonomics</span>
+          <div class="post-meta" style="font-size: 0.75rem; margin-top: 10px;">
+            <span>March 08, 2026</span>
+          </div>
+          <h3>5 Simple Steps to Improve Your Work-From-Home Ergonomics</h3>
+          <p style="margin-bottom: 20px; color: var(--text-mid); font-size: 0.9rem;">Proper posture is the key to longevity. Learn how to setup your desk and chair for maximum comfort...</p>
+          <a href="./404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal delay-2">
+        <a href="./404.html" class="blog-card-img">
+          <img src="images/gallery/gallery-2.webp" alt="Minimalist Interiors">
+        </a>
+        <div class="blog-card-content">
+          <span class="post-category" style="background:#4A5D4E;">Interior</span>
+          <div class="post-meta" style="font-size: 0.75rem; margin-top: 10px;">
+            <span>March 05, 2026</span>
+          </div>
+          <h3>Minimalism: More Than Just an Aesthetic Choice</h3>
+          <p style="margin-bottom: 20px; color: var(--text-mid); font-size: 0.9rem;">How stripping away the excess in your living space can lead to a clearer mind and a more focused life.</p>
+          <a href="./404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal delay-3">
+        <a href="./404.html" class="blog-card-img">
+          <img src="images/gallery/gallery-3.webp" alt="Craftsmanship">
+        </a>
+        <div class="blog-card-content">
+          <span class="post-category" style="background:#9B7B4F;">Craftsmanship</span>
+          <div class="post-meta" style="font-size: 0.75rem; margin-top: 10px;">
+            <span>Feb 28, 2026</span>
+          </div>
+          <h3>Back to Basics: The Art of Traditional Joinery in Modern Times</h3>
+          <p style="margin-bottom: 20px; color: var(--text-mid); font-size: 0.9rem;">A behind-the-scenes look at how our artisans use centuries-old techniques to build furniture that lasts for generations.</p>
+          <a href="./404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal">
+        <a href="./404.html" class="blog-card-img">
+          <img src="images/gallery/gallery-5.webp" alt="Modern Lighting">
+        </a>
+        <div class="blog-card-content">
+          <span class="post-category" style="background:#6D5D4E;">Lighting</span>
+          <div class="post-meta" style="font-size: 0.75rem; margin-top: 10px;">
+            <span>Feb 22, 2026</span>
+          </div>
+          <h3>Atmosphere and Productivity: The Science of Workspace Lighting</h3>
+          <p style="margin-bottom: 20px; color: var(--text-mid); font-size: 0.9rem;">Why the right pendant light can do more than just illuminate your desk; it can boost your mood and focus.</p>
+          <a href="./404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal delay-1">
+        <a href="./404.html" class="blog-card-img">
+          <img src="images/section/categories-1.webp" alt="Natural Materials">
+        </a>
+        <div class="blog-card-content">
+          <span class="post-category" style="background:var(--accent);">Materials</span>
+          <div class="post-meta" style="font-size: 0.75rem; margin-top: 10px;">
+            <span>Feb 15, 2026</span>
+          </div>
+          <h3>Spirit of the Forest: Why We Choose Solid Oak Above All Else</h3>
+          <p style="margin-bottom: 20px; color: var(--text-mid); font-size: 0.9rem;">Exploring the unique properties and durability of solid oak, the cornerstone of the STACKLY collection.</p>
+          <a href="./404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal delay-2">
+        <a href="./404.html" class="blog-card-img">
+          <img src="images/section/categories-6.webp" alt="Home Office">
+        </a>
+        <div class="blog-card-content">
+          <span class="post-category" style="background:var(--primary-dark);">Lifestyle</span>
+          <div class="post-meta" style="font-size: 0.75rem; margin-top: 10px;">
+            <span>Feb 10, 2026</span>
+          </div>
+          <h3>Beyond the Cubicle: Designing a Home Office That Inspires</h3>
+          <p style="margin-bottom: 20px; color: var(--text-mid); font-size: 0.9rem;">Tips and tricks to blend professional functionality with the warmth of your personal home decor.</p>
+          <a href="./404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="reveal-scale" style="background: var(--primary-dark); padding: 60px; border-radius: var(--radius-lg); color: white; text-align: center; margin-bottom: 80px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px;">Join the Journal</h2>
+        <p style="margin-bottom: 30px; opacity: 0.8; max-width: 500px; margin-left: auto; margin-right: auto;">Get monthly inspiration, early access to new collections, and exclusive design guides delivered to your inbox.</p>
+        <form onsubmit="return false;" style="display: flex; gap: 10px; max-width: 450px; margin: 0 auto; flex-wrap: wrap;">
+            <input type="email" placeholder="Email Address" style="flex: 1; min-width: 250px; padding: 14px 20px; border-radius: 50px; border: none; outline: none;">
+            <button type="submit" class="btn btn-primary" style="border-radius: 50px; padding: 14px 30px; background: var(--accent);">Subscribe</button>
+        </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></div>
+        <p>Premium office and home furniture crafted for the modern professional. Built to last, designed to inspire.</p>
+        <div class="footer-socials">
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="./404.html">FAQ</a></li>
+          <li><a href="./404.html">Shipping Info</a></li>
+          <li><a href="./404.html">Returns & Refunds</a></li>
+          <li><a href="./404.html">Track Order</a></li>
+          <li><a href="./404.html">Size Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@stackly.com"><i class="fa-regular fa-envelope"></i> hello@stackly.com</a></li>
+          <li><a href="tel:+91 9876543210"><i class="fa-solid fa-phone"></i> +91 9876543210</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> Salem, Tamil Nadu, India</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Furniture. All rights reserved. Crafted with ❤️ for productive spaces.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

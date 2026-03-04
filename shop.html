@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Shop - STACKLY Furniture</title>
+  <meta name="description" content="Shop all premium ergonomic furniture, office chairs, desks, and accessories at STACKLY Furniture.">
+  <meta name="author" content="STACKLY">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="shop-page">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="color:rgba(255,255,255,.6);font-size:.82rem;">Welcome to STACKLY Furniture</div>
+    <div class="topbar-center">🚚 Free shipping on all orders over <span>₹50.00</span></div>
+    <div class="topbar-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Store Locator</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-btn" aria-label="Account"><i class="fa-solid fa-user"></i></a>
+      <a href="cart.html" class="nav-btn cart" aria-label="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="page-header" style="background: var(--primary-dark); padding: 60px 0; text-align: center; color: white;">
+  <div class="container">
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 10px;">Shop All Products</h1>
+    <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem;"><a href="index.html" style="color: var(--accent-light);">Home</a> / Shop</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top: 60px;">
+  <div class="container" style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+    
+    <aside class="shop-sidebar" style="width: 260px; flex-shrink: 0;">
+      <div class="filter-widget" style="margin-bottom: 30px;">
+        <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border);">Categories</h4>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+          <li><a href="#" class="filter-category active" data-category="all" style="color: var(--primary); font-weight: 700; display: flex; justify-content: space-between;">All Furniture <span>(42)</span></a></li>
+          <li><a href="#" class="filter-category" data-category="chairs" style="color: var(--text-mid); display: flex; justify-content: space-between;">Chairs & Seating <span>(18)</span></a></li>
+          <li><a href="#" class="filter-category" data-category="desks" style="color: var(--text-mid); display: flex; justify-content: space-between;">Desks & Tables <span>(12)</span></a></li>
+          <li><a href="#" class="filter-category" data-category="storage" style="color: var(--text-mid); display: flex; justify-content: space-between;">Storage <span>(7)</span></a></li>
+          <li><a href="#" class="filter-category" data-category="lighting" style="color: var(--text-mid); display: flex; justify-content: space-between;">Lighting <span>(5)</span></a></li>
+        </ul>
+      </div>
+
+      <div class="filter-widget">
+        <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border);">Price Range</h4>
+        <div style="margin-bottom: 10px; font-weight: 600; color: var(--primary);">Max Price: <span id="priceValue">₹1000</span></div>
+        <input type="range" id="priceRange" min="0" max="1500" value="1500" style="width: 100%; margin-bottom: 10px; accent-color: var(--primary);">
+        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-mid);">
+          <span>₹0</span>
+          <span>₹1500+</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="shop-main" style="flex: 1; min-width: 300px;">
+      
+      <div class="shop-controls" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; font-size: 0.9rem; color: var(--text-mid);">
+        <div id="resultsCount">Showing 1–12 of 12 results</div>
+        <select id="sortSelect" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; outline: none; background: white;">
+          <option value="default">Default Sorting</option>
+          <option value="price-low">Sort by price: low to high</option>
+          <option value="price-high">Sort by price: high to low</option>
+        </select>
+      </div>
+
+      <div class="products-grid shop-grid" style="grid-template-columns: repeat(3, 1fr);">
+        
+        <div class="product-card" data-category="chairs" data-price="249">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">-20%</span>
+            <img src="images/shop/product-1.webp" alt="Minimalist Lounge Chair" class="main-img">
+            <img src="images/shop/product-1.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Minimalist Lounge Chair</a></div>
+            <div class="product-price">
+              <span class="price-now">₹249.00</span>
+              <span class="price-old">₹310.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p1" data-name="Minimalist Lounge Chair" data-price="249.00" data-image="images/shop/product-1.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="chairs" data-price="349">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-new">NEW</span>
+            <img src="images/shop/product-2.webp" alt="Ergonomic Chair Pro" class="main-img">
+            <img src="images/shop/product-2.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Ergonomic Chair Pro</a></div>
+            <div class="product-price">
+              <span class="price-now">₹349.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p2" data-name="Ergonomic Chair Pro" data-price="349.00" data-image="images/shop/product-2.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="desks" data-price="450">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">-15%</span>
+            <img src="images/shop/product-3.webp" alt="Adjustable Standing Desk" class="main-img">
+            <img src="images/shop/product-3.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Adjustable Standing Desk</a></div>
+            <div class="product-price">
+              <span class="price-now">₹450.00</span>
+              <span class="price-old">₹530.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p3" data-name="Adjustable Standing Desk" data-price="450.00" data-image="images/shop/product-3.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="desks" data-price="599">
+          <div class="product-img-wrap">
+            <img src="images/shop/product-4.webp" alt="Sculptural Oak Table" class="main-img">
+            <img src="images/shop/product-4.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Sculptural Oak Table</a></div>
+            <div class="product-price">
+              <span class="price-now">₹599.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p4" data-name="Sculptural Oak Table" data-price="599.00" data-image="images/shop/product-4.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="lighting" data-price="129">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-new">NEW</span>
+            <img src="images/shop/product-5.webp" alt="Pendant Light Brass" class="main-img">
+            <img src="images/shop/product-5.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Pendant Light Brass</a></div>
+            <div class="product-price">
+              <span class="price-now">₹129.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p5" data-name="Pendant Light Brass" data-price="129.00" data-image="images/shop/product-5.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="chairs" data-price="189">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">-10%</span>
+            <img src="images/shop/product-6.webp" alt="Modern Accent Chair" class="main-img">
+            <img src="images/shop/product-6.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Modern Accent Chair</a></div>
+            <div class="product-price">
+              <span class="price-now">₹189.00</span>
+              <span class="price-old">₹210.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p6" data-name="Modern Accent Chair" data-price="189.00" data-image="images/shop/product-6.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="storage" data-price="320">
+          <div class="product-img-wrap">
+            <img src="images/shop/product-7.webp" alt="Nordic Bookshelf" class="main-img">
+            <img src="images/shop/product-7.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Nordic Bookshelf</a></div>
+            <div class="product-price">
+              <span class="price-now">₹320.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p7" data-name="Nordic Bookshelf" data-price="320.00" data-image="images/shop/product-7.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="chairs" data-price="1299">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-new">NEW</span>
+            <img src="images/shop/product-8.webp" alt="Plush Velvet Sofa" class="main-img">
+            <img src="images/shop/product-8.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Plush Velvet Sofa</a></div>
+            <div class="product-price">
+              <span class="price-now">₹1,299.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p8" data-name="Plush Velvet Sofa" data-price="1299.00" data-image="images/shop/product-8.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="desks" data-price="279">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">-25%</span>
+            <img src="images/shop/product-9.webp" alt="Floating Wall Desk" class="main-img">
+            <img src="images/shop/product-9.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Floating Wall Desk</a></div>
+            <div class="product-price">
+              <span class="price-now">₹279.00</span>
+              <span class="price-old">₹370.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p9" data-name="Floating Wall Desk" data-price="279.00" data-image="images/shop/product-9.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="desks" data-price="149">
+          <div class="product-img-wrap">
+            <img src="images/shop/product-10.webp" alt="Rattan Side Table" class="main-img">
+            <img src="images/shop/product-10.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Rattan Side Table</a></div>
+            <div class="product-price">
+              <span class="price-now">₹149.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p10" data-name="Rattan Side Table" data-price="149.00" data-image="images/shop/product-10.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="lighting" data-price="89">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-new">NEW</span>
+            <img src="images/shop/product-11.webp" alt="Ceramic Table Lamp" class="main-img">
+            <img src="images/shop/product-11.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Ceramic Table Lamp</a></div>
+            <div class="product-price">
+              <span class="price-now">₹89.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p11" data-name="Ceramic Table Lamp" data-price="89.00" data-image="images/shop/product-11.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="desks" data-price="399">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">-18%</span>
+            <img src="images/shop/product-12.webp" alt="Solid Oak Coffee Table" class="main-img">
+            <img src="images/shop/product-12.1.webp" alt="Hover" class="img-hover">
+            <div class="product-actions">
+              <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name"><a href="#">Solid Oak Coffee Table</a></div>
+            <div class="product-price">
+              <span class="price-now">₹399.00</span>
+              <span class="price-old">₹485.00</span>
+            </div>
+            <button class="add-to-cart js-add-cart" data-id="p12" data-name="Solid Oak Coffee Table" data-price="399.00" data-image="images/shop/product-12.webp"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pagination" style="display: flex; gap: 8px; justify-content: center; margin-top: 50px;">
+        <span class="page-num" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--primary); color: white; border-radius: 6px; font-weight: 600;">1</span>
+        <a href="./404.html" class="page-num" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); color: var(--text-dark); border-radius: 6px; font-weight: 600; text-decoration: none; transition: 0.2s;">2</a>
+        <a href="./404.html" class="page-num" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); color: var(--text-dark); border-radius: 6px; font-weight: 600; text-decoration: none; transition: 0.2s;">3</a>
+        <a href="./404.html" class="page-num" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); color: var(--text-dark); border-radius: 6px; font-weight: 600; text-decoration: none; transition: 0.2s;"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </main>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="images/logo/logo.webp" alt="STACKLY Furniture"></div>
+        <p>Premium office and home furniture crafted for the modern professional. Built to last, designed to inspire.</p>
+        <div class="footer-socials">
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="./404.html" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="./404.html">FAQ</a></li>
+          <li><a href="./404.html">Shipping Info</a></li>
+          <li><a href="./404.html">Returns & Refunds</a></li>
+          <li><a href="./404.html">Track Order</a></li>
+          <li><a href="./404.html">Size Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@stackly.com"><i class="fa-regular fa-envelope"></i> hello@stackly.com</a></li>
+          <li><a href="tel:+91 9876543210"><i class="fa-solid fa-phone"></i> +91 9876543210</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> Salem, Tamil Nadu, India</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Furniture. All rights reserved. Crafted with ❤️ for productive spaces.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
