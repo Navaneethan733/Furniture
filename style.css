@@ -794,6 +794,8 @@ input, textarea, select { font-family: inherit; }
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .product-card:hover {
   box-shadow: var(--shadow-lg);
@@ -859,7 +861,12 @@ input, textarea, select { font-family: inherit; }
 }
 .action-btn:hover { background: var(--primary); color: var(--white); transform: scale(1.1); }
 
-.product-info { padding: 16px 18px 18px; }
+.product-info {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 .product-name {
   font-weight: 600;
   font-size: 0.93rem;
@@ -873,10 +880,11 @@ input, textarea, select { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
   margin-bottom: 14px;
 }
 .price-now  { font-size: 1.02rem; font-weight: 800; color: var(--primary); }
-.price-old  { font-size: 0.85rem; color: var(--text-light); text-decoration: line-through; }
+.price-old  { display: none; font-size: 0.85rem; color: var(--text-light); text-decoration: line-through; }
 .add-to-cart {
   width: 100%;
   padding: 10px 16px;
@@ -895,6 +903,7 @@ input, textarea, select { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-top: auto;
 }
 .qty-control {
   display: flex;
@@ -2294,4 +2303,12 @@ input, textarea, select { font-family: inherit; }
   .error-page { padding: 60px 0; }
   .error-img-wrap { margin-bottom: 30px; }
   .error-actions { flex-direction: column; align-items: stretch; max-width: 300px; margin: 0 auto; }
+}
+
+@media (max-width: 991px) {
+  .shop-sidebar {
+    margin: 0 auto;
+    width: 100% !important;
+    max-width: 380px;
+  }
 }
